@@ -7,15 +7,15 @@ from random import randint
 from random import choice
 
 
-class Yourdadjoke:
-    """It's time to get a random dadjoke"""
+class YourFortune:
+    """It's time to get your fortune!!!"""
 
     def __init__(self, bot):
         self.bot = bot
 
     @commands.command(pass_context=True, no_pm=True)
-    async def getdadjoke(self, ctx):
-        """Here is your random DadJoke ..."""
+    async def dadjoke(self, ctx):
+        """What is your fortune? Well then, lets find out..."""
         
         user = ctx.message.author
         page = randint(1,6)
@@ -23,9 +23,9 @@ class Yourdadjoke:
         async with aiohttp.get(link) as m:
             result = await m.json()
             message = choice(result)
-            dadjoke = discord.Embed(colour=user.colour)
-            dadjoke.add_field(name="{}'s dadjoke!".format(user.display_name),value="{}".format(message["message"]))
-            await self.bot.say(embed=dadjoke)
+            fortune = discord.Embed(colour=user.colour)
+            fortune.add_field(name="{}'s Fortune!".format(user.display_name),value="{}".format(message["message"]))
+            await self.bot.say(embed=fortune)
 
 def setup(bot):
-    bot.add_cog(DadJoke(bot))
+    bot.add_cog(YourFortune(bot))
