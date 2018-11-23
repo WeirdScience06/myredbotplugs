@@ -1,0 +1,9 @@
+{
+	    "AUTHOR" : "WeirdScienceX",
+	    "SHORT" : "Dadjokes!!!",
+	    "DESCRIPTION" : "Radom dadjoke from Scorpstuff ...",
+	    "DISABLED" : false,
+	    "NAME" : "DadJoke",
+	    "TAGS" : ["dadjoke"],
+	    "INSTALL_MSG" : "You just installed **DadJoke.py**! \nTime to get a random dadjoke ..\n\n"
+	}
